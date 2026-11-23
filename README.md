@@ -2,7 +2,7 @@
 
 # GB Files
 
-<img src="(img)" alt="GB Files Logo" width="120" />
+<img width="120" height="120" alt="gbfiles" src="https://github.com/user-attachments/assets/b1ccc273-7797-4b41-b204-52268c58eea3" />
 
 **A fast, lightweight, 100% offline dual-pane file manager for Android.** 🚀
 

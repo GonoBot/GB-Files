@@ -96,7 +96,7 @@ Most modern file managers are bloated with cloud upsells, hidden telemetry, and 
 
 ## 🐛 Found a Bug or Have Feedback?
 
-**GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone, please open an issue in the **[Issues](https://github.com/YOUR_USERNAME/gb-files/issues)** tab and include:
+**GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone (BUT NOT RELATED TO VIDEO BY SAYING "Hello, I am facing an issue related to video players in your app. It was not able to play 4k and 48000Hz video please fix it" SERIOUSLY I CAN'T OK ?! I Already mentioned it on 'IMPORTANT' SECTION WHY.I.CAN'T.FIX.IT!!!! Please, Please at least read 'Important and Limitations' Ahem...), please open an issue in the **[Issues](https://github.com/GonoBot/gb-files/issues)** tab and include:
 1. 📱 Your **phone model** and **Android version**
 2. 🔁 The **steps** that caused the issue
 
@@ -122,42 +122,3 @@ Most modern file managers are bloated with cloud upsells, hidden telemetry, and 
 
 ## 🏷️ Topics & Tags
 `android` `file-manager` `dual-pane` `offline` `privacy-first` `kotlin` `no-internet` `text-editor` `json-editor` `avif` `zip-extractor` `recycle-bin` `apk`
-
----
-
-## 🛡️ Privacy & Security
-
-* **🚫 Zero Network Permissions:** `INTERNET` permission is completely absent from `AndroidManifest.xml`.
-* **📵 No Cloud Backup Leakage:** `android:allowBackup="false"` ensures local bookmarks, history, and paths are never uploaded via ADB or cloud backups.
-* **✅ Official Build Verification:** Open **⋮ → About & Privacy** inside **GB Files** to verify that you are running an authentic, unmodified official release.
-
----
-
-## 🐛 Found a Bug or Have Feedback?
-
-**GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone (BUT NOT RELATED TO VIDEO BY SAYING "Hello, I am facing an issue related to video players in your app. It was not able to play 4k and 48000Hz video please fix it" SERIOUSLY I CAN'T OK ?! I Already mentioned it on 'IMPORTANT' SECTION WHY.I.CAN'T.FIX.IT!!!! Please, Please at least read 'Important and Limitations' Ahem...), please open an issue in the **[Issues](https://github.com/YOUR_USERNAME/gb-files/issues)** tab and include:
-1. 📱 Your **phone model** and **Android version**
-2. 🔁 The **steps** that caused the issue
-
----
-
-## ❤️ Support the Project
-
-**GB Files** is free, ad-free, and built independently with no tracking or paywalls. If it saves you time every day and you would like to support ongoing updates and future platform releases, optional tips are always appreciated:
-
-<a href="https://ko-fi.com/YOUR_SUPPORT_LINK_HERE">
-  <img src="https://img.shields.io/badge/Support_GB_Files-Ko--fi-62B1B0?style=for-the-badge&logo=kofi&logoColor=1B1B1B" alt="Support GB Files on Ko-fi" />
-</a>
-&nbsp;
-<a href="https://YOUR_WEBSITE_LINK_HERE">
-  <img src="https://img.shields.io/badge/Website-Visit-2E2D2D?style=for-the-badge&logo=googlechrome&logoColor=EFEFEF" alt="Website" />
-</a>
-&nbsp;
-<a href="https://YOUR_EXTRA_LINK_HERE">
-  <img src="https://img.shields.io/badge/Extra_Link-Custom_Button-2E2D2D?style=for-the-badge" alt="Extra Button" />
-</a>
-
----
-
-## 🏷️ Topics & Tags
-`android` `file-manager` `dual-pane` `offline` `privacy-first` `kotlin` `no-internet` `text-editor` `json-editor` `zip-extractor` `recycle-bin` `apk`

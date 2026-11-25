@@ -80,7 +80,7 @@ Most modern file managers are bloated with cloud upsells, hidden telemetry, and 
 ## ⚠️ Important Notes & Known Limitations
 
 * **🛡️ First-Time Google Play Protect Prompt:** Because **GB Files** is an independent sideloaded release that requests *All Files Access*, Google Play Protect may display *"App scan recommended"* or *"Harmful app blocked"* until the signing certificate builds install reputation. Tap **More details → Install anyway** to install safely.
-* **🎬 High-Resolution / 4K Video Playback:** **GB Files** includes a lightweight built-in video player for everyday clips, **not** a heavy hardware-accelerated media engine. High-resolution **4K** or **AV1-encoded** videos may stutter or lag during playback. For 4K/AV1 videos, tap **Open with...** and use a dedicated video player such as **VLC** or **MPV**.
+* **🎬 High-Resolution / 4K Video Playback:** **GB Files** includes a lightweight built-in video player for everyday clips, **not** a heavy hardware-accelerated media engine. High-resolution **4K** or **AV1-encoded** videos may stutter or lag during playback. For 4K/AV1 videos, tap **Open with...** and use a dedicated video player such as **VLC** or **MPV**, It decided for app to be as lightweight as possible adding `4k or Av1-encoded` Dependency cause app to jump straight to `+25 mb` more then what is already now.
 * **🔐 Encrypted Archives & Password-Protected PDFs:** Standard `.zip` archives are supported natively without external native binaries; encrypted archives (`.7z`, `.rar`, password-protected `.zip`) and password-protected PDFs require a dedicated external tool.
 * **📁 Android 11+ All Files Access:** On Android 11 and above, **GB Files** requires *All Files Access* (`MANAGE_EXTERNAL_STORAGE`) solely to browse, move, and manage local files across internal and external storage.
 
@@ -135,7 +135,7 @@ Most modern file managers are bloated with cloud upsells, hidden telemetry, and 
 
 ## 🐛 Found a Bug or Have Feedback?
 
-**GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone, please open an issue in the **[Issues](https://github.com/YOUR_USERNAME/gb-files/issues)** tab and include:
+**GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone (BUT NOT RELATED TO VIDEO BY SAYING "Hello, I am facing an issue related to video players in your app. It was not able to play 4k and 48000Hz video please fix it" SERIOUSLY I CAN'T OK ?! I Already mentioned it on 'IMPORTANT' SECTION WHY.I.CAN'T.FIX.IT!!!! Please, Please at least read 'Important and Limitations' Ahem...), please open an issue in the **[Issues](https://github.com/YOUR_USERNAME/gb-files/issues)** tab and include:
 1. 📱 Your **phone model** and **Android version**
 2. 🔁 The **steps** that caused the issue
 

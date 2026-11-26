@@ -94,6 +94,18 @@ Most modern file managers are bloated with cloud upsells, hidden telemetry, and 
 
 ---
 
+## ⚠️ Official Distribution & Authenticity Notice
+
+**GB Files** is officially distributed **exclusively** through:
+* **GitHub Releases:** [github.com/GonoBot/GB-Files/releases](https://github.com/GonoBot/GB-Files/releases)
+* **Official Website:** [gonobot.in](https://gonobot.in/)
+
+We do **not** upload or publish **GB Files** to third-party APK websites or external app stores. If you find this app hosted on any other website or platform without our knowledge, **do not trust or install it**—we are not responsible for modified, tampered, or unsafe builds downloaded from unofficial sources, nor can we guarantee their privacy or security.
+
+* **Verify Your Install:** After installing, open **⋮ → About & Privacy** inside **GB Files** to confirm that your copy is a genuine, unmodified official release.
+
+---
+
 ## 🐛 Found a Bug or Have Feedback?
 
 **GB Files** is actively tested and improved based on real-world device feedback. If you encounter an issue or layout quirk on your phone (BUT NOT RELATED TO VIDEO BY SAYING "Hello, I am facing an issue related to video players in your app. It was not able to play 4k and 48000Hz video please fix it" SERIOUSLY I CAN'T OK ?! I Already mentioned it on 'IMPORTANT' SECTION WHY.I.CAN'T.FIX.IT!!!! Please, Please at least read 'Important and Limitations' Ahem...), please open an issue in the **[Issues](https://github.com/GonoBot/gb-files/issues)** tab and include:

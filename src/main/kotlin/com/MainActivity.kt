@@ -79,7 +79,6 @@ class MainActivity : Activity() {
     private var activePanel = 0
     private var permissionSettingsOpened = false
 
-    // Independent selection state & explicit mode flags for each panel
     private val leftSelected = linkedSetOf<String>()
     private val rightSelected = linkedSetOf<String>()
     private var leftSelectionMode = false
@@ -87,7 +86,6 @@ class MainActivity : Activity() {
     private var leftRangeAnchor: String? = null
     private var rightRangeAnchor: String? = null
 
-    // Sort & Filter States (Independent per panel & persisted across restarts)
     enum class SortBy { NAME, TYPE, DATE, SIZE }
     private var leftSortBy = SortBy.NAME
     private var rightSortBy = SortBy.NAME
@@ -99,7 +97,7 @@ class MainActivity : Activity() {
     private var showFileSizes = true
     private var confirmBeforeQuit = true
 
-    // Auto-refresh watchers for both panels
+    // Auto-refresh
     private var leftObserver: FileObserver? = null
     private var rightObserver: FileObserver? = null
 
@@ -124,9 +122,8 @@ class MainActivity : Activity() {
     private var cachedDiskText = "Disk: ..."
     private var lastDiskCheckMs = 0L
 
-    // Temporary #62B1B0 highlight for newly copied/moved/created items
     private val recentHighlightedPaths = mutableSetOf<String>()
-    // Save exact scroll position per folder path
+    
     private val folderScrollPositions = mutableMapOf<String, Pair<Int, Int>>()
 
     private var bottomSwipeStartX = 0f
@@ -353,7 +350,6 @@ class MainActivity : Activity() {
 
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
-        // Close any active full-screen overlay first
         findViewById<View>(R.id.trashRoot)?.let { view ->
             (view.parent as? android.view.ViewGroup)?.removeView(view)
             loadBothPanels()
@@ -383,7 +379,6 @@ class MainActivity : Activity() {
         }
 
         val current = getCurrentFolder()
-        // 1. Close selection mode if active
         if (isSelectionModeActive(activePanel, current)) {
             getSelectedItems(activePanel).clear()
             setPanelSelectionMode(activePanel, false)
@@ -393,14 +388,12 @@ class MainActivity : Activity() {
             return
         }
 
-        // 2. Navigate up to parent folder all the way to "/"
         val parent = current.parentFile
         if (parent != null && current.absolutePath != internalRoot.absolutePath) {
             navigateTo(parent)
             return
         }
 
-        // 3. At root "/" -> confirm quit (or finish directly if disabled in settings)
         showQuitConfirmDialog()
     }
 
@@ -456,7 +449,6 @@ class MainActivity : Activity() {
         }.also { it.startWatching() }
     }
 
-    // DETECT ALL MOUNTED STORAGE VOLUMES (Internal, microSD, USB OTG)
     private fun getAvailableStorages(): List<Pair<String, File>> {
         val storages = mutableListOf<Pair<String, File>>()
         storages.add("Internal Storage" to internalRoot)
@@ -1126,7 +1118,6 @@ class MainActivity : Activity() {
         dlg.show()
     }
 
-    // FOLDER NAVIGATION
     private fun buzzHaptic(isStrong: Boolean) {
         try {
             val ms = if (isStrong) 65L else 25L
@@ -1248,7 +1239,6 @@ class MainActivity : Activity() {
         navigateTo(parent)
     }
 
-    // MIRROR
     private fun mirrorPanel() {
         val sourceFolder = getCurrentFolder()
         if (!sourceFolder.exists() || !sourceFolder.isDirectory) {
@@ -1274,7 +1264,6 @@ class MainActivity : Activity() {
         startFolderObservers()
     }
 
-    // SWAP
     private fun swapPanels() {
         val oldLeftFolder = leftFolder
         leftFolder = rightFolder
@@ -1300,7 +1289,6 @@ class MainActivity : Activity() {
         startFolderObservers()
     }
 
-    // CREATE FOLDER (Highlights newly created folder in teal #62B1B0)
     private fun showCreateNewMenu() {
         val popup = PopupMenu(this, btnNew)
         popup.menu.add("New Folder")
@@ -1428,7 +1416,6 @@ class MainActivity : Activity() {
         val dateView: TextView
     ) : RecyclerView.ViewHolder(rowLayout)
 
-    // HIGH-SPEED RECYCLERVIEW + GLIDE FILE LIST
     private fun showFiles(folder: File, recycler: RecyclerView) {
         val audioExts = setOf("mp3", "wav", "m4a", "aac", "ogg", "flac")
         val panel = if (recycler == leftList) 0 else 1
@@ -1948,7 +1935,6 @@ class MainActivity : Activity() {
         updateSelectionToolbar()
     }
 
-    // ACTIVE PANEL AND HISTORY HELPERS
     private fun setActivePanel(panel: Int) {
         val target = if (panel == 0) 0 else 1
         if (activePanel == target && ::leftHeader.isInitialized) return
@@ -1979,7 +1965,6 @@ class MainActivity : Activity() {
         if (activePanel == 0) leftHistoryIndex = index else rightHistoryIndex = index
     }
 
-    // CENTER LONG-PRESS FILE OPERATIONS POPUP
     private fun showFileOperationsPopup(panel: Int) {
         val currentFolder = if (panel == 0) leftFolder else rightFolder
         val targetFolder = if (panel == 0) rightFolder else leftFolder
@@ -2253,7 +2238,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // Conflict modes: 0 = Replace, 1 = Skip, 2 = Keep Both (Default)
     private fun askConflictResolution(
         fileName: String,
         isMove: Boolean,
@@ -2343,7 +2327,6 @@ class MainActivity : Activity() {
         dlg.show()
     }
 
-    // SINGLE-COROUTINE COPY & MOVE WITH LIVE PROGRESS DIALOG & MID-TRANSFER CONFLICT RESOLUTION
     private fun performCopyOrMove(
         files: List<File>,
         targetFolder: File,
@@ -2671,7 +2654,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // OPEN WITH & SHARE
     private fun getFileUri(file: File): Uri {
         return try {
             val clazz = Class.forName("androidx.core.content.FileProvider")
@@ -2731,7 +2713,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // 30-DAY TRASH RECOVERY MANAGER
     private fun cleanupExpiredTrash() {
         uiScope.launch(Dispatchers.IO) {
             val trashFilesDir = File(internalRoot, ".Gonofiles/Trash/Files")
@@ -3168,7 +3149,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // CATEGORIZED BOOKMARKS
     private fun getSavedBookmarks(): MutableSet<String> {
         val prefs = getSharedPreferences("gonofiles_prefs", Context.MODE_PRIVATE)
         return prefs.getStringSet("bookmarks", emptySet())?.toMutableSet() ?: mutableSetOf()
@@ -4201,7 +4181,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // APK ICON LOADER (Images & Videos handled by Glide)
     private val thumbCache = android.util.LruCache<String, android.graphics.Bitmap>(120)
 
     private fun loadThumbnailAsync(
@@ -4267,7 +4246,6 @@ class MainActivity : Activity() {
         }
     }
 
-    // BUILT-IN IMAGE, VIDEO, AUDIO & PDF VIEWER
     private fun openMediaViewer(file: File, mode: String) {
         val rootView = findViewById<android.view.ViewGroup>(android.R.id.content)
         if (rootView.findViewById<View>(R.id.viewerRoot) != null) return

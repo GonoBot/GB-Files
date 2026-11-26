@@ -13,7 +13,7 @@
 
 <br/>
 
-<a href="https://github.com/YOUR_USERNAME/gb-files/releases/latest">
+<a href="https://github.com/GonoBot/GB-Files/releases/tag/v1.0">
   <img src="https://img.shields.io/badge/Download_APK-GitHub_Releases-62B1B0?style=for-the-badge&logo=android&logoColor=1B1B1B" alt="Download APK" />
 </a>
 &nbsp;

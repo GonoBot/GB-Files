@@ -24,7 +24,7 @@ object TextEditorOverlay {
         "pro", "gitignore"
     )
 
-    private const val MAX_SAFE_BYTES = 2 * 1024 * 1024L // 2 MB cap to prevent OOM on huge logs
+    private const val MAX_SAFE_BYTES = 2 * 1024 * 1024L // 2 MB 
 
     fun isTextFile(file: File): Boolean {
         if (file.isDirectory) return false
@@ -139,11 +139,9 @@ object TextEditorOverlay {
             dlg.show()
         }
 
-        // Expose back handler via tag so MainActivity.onBackPressed() prompts to save if dirty
         editorView.tag = Runnable { handleBackRequest() }
 
         contentEt.setText(initialText)
-        // Preserve multi-line formatting.
         contentEt.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}

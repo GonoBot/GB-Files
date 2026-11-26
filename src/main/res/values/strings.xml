@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GB Files</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="_00_00">00:00</string>
+    <string name="build_origin_tag" translatable="false">GB-GF-2026-8F4A9C1E</string>
+    <string name="help_gestures_text">• Dual-Pane Workflow: Tap Left or Right panel to activate it. Copy and Move transfer files directly to the opposite panel.\n\n• Swipe Right on Any Item: Selects a range of files between your last swiped item and the current item.\n\n• No Videos Play Support, Recommend to Use Dedicated Videos Player\n\n• Long-Press Selected Item: Opens Copy, Move, Delete, Info, Bookmark, Rename, Share, Extract, and Compress actions.\n\n• Swipe Up on Bottom Toolbar: Opens your Recent History drawer (last 50 visited folders and files).\n\n• Tap Top Path Bar: Jump directly to any folder path or paste a path from clipboard.\n\n• 30-Day Recycle Bin: Deleted files stay safely in Trash for 30 days before auto-cleanup.</string>
+    <string name="about_privacy_text">GB Files v1.0\nLightweight Dual-Pane File Manager\n\nPRIVACY POLICY\n• Zero Data Collection: GB files does not collect, store, or transmit any personal data, file names, or usage analytics.\n• 100% Offline: This app does not request INTERNET permission—your files never leave your device.\n• Local Storage Only: Bookmarks, history, and Trash metadata are stored strictly locally on your device.\n\nCopyright © 2026 Gono Bot. All Rights Reserved.</string>
+</resources>

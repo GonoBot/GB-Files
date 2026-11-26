@@ -17,8 +17,8 @@
   <img src="https://img.shields.io/badge/Download_APK-GitHub_Releases-62B1B0?style=for-the-badge&logo=android&logoColor=1B1B1B" alt="Download APK" />
 </a>
 &nbsp;
-<a href="https://f-droid.org">
-  <img src="https://img.shields.io/badge/Download_on-F--Droid-2E2D2D?style=for-the-badge&logo=fdroid&logoColor=62B1B0" alt="Download on F-Droid" />
+<a href="https://gonobot.in/">
+  <img src="https://img.shields.io/badge/Download_on-Gono_Bot-2E2D2D?style=for-the-badge&logo=GonoBot&logoColor=62B1B0" alt="Download on Gono Bot" />
 </a>
 &nbsp;
 <a href="https://gonobot.in/">
